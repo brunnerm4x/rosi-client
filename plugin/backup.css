@@ -1,0 +1,291 @@
+.backupsetting {
+    position: absolute;
+    background-color: white;
+    border-radius: 1.25em;
+    box-shadow: 0px 0px 5px 0px #222222;
+    width: 98vw;
+    height: 98vw;
+    left: 1vw;
+    z-index: 996;
+    padding: 0.5em;
+    padding-top: 4em;
+    overflow: hidden;
+}
+
+.headlineBackup {
+    font-family: Roboto-Bold;
+    font-size: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    color: #222222;
+}
+
+.backupContent {
+    position: absolute;
+    width: 196vw;
+    height: 85vw;
+}
+
+.backupPage {
+    position: absolute;
+    width: 96vw;
+    height: 85vw;
+}
+
+.page1 {
+    overflow: scroll;
+}
+
+.page2 {
+    left: 29.5em;
+}
+
+.backupsettingInvisibleNA {
+    top: -40em;
+}
+
+.backupsettingVisible {
+    animation-name: backupsettingVisibleA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    top: 0.25em;
+}
+
+.backupsettingInvisible {
+    animation-name: backupsettingInvisibleA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    top: -40em;
+}
+
+.swipeLeft {
+    animation-name: swipeLeftA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    left: -29.25em;
+}
+
+.swipeRight {
+    animation-name: swipeRightA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    left: 0.5em;
+}
+
+#backups_list {
+    resize: none;
+}
+
+.backupButton {
+    position: fixed;
+    top: 27em;
+    left: 27em;
+    height: 2.5em;
+    width: 2.5em;
+    min-width: 2.5em;
+    border-radius: 2em;
+    overflow: hidden;
+    line-height: 2.5em;
+    z-index: 990;
+    font-size: 1em;
+    overflow: hidden;
+}
+
+#iconContainer {
+    width: 2.5em;
+    height: 2.5em;
+    position: relative;
+}
+
+.backupIcon {
+    background-image: url("images/backup-01.svg");
+    width: 2.5em;
+    height: 2.5em;
+    position: relative;
+}
+
+.loading {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    position: relative;
+    left: 0.5em;
+    top: 0.5em;
+    display: none;
+}
+
+.backupButtonHover {
+    width: 10em;
+    left: 19.5em;
+    overflow: hidden;
+    animation-name: backupHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 0.2em 2em 2em 0.2em;
+}
+
+.backupButtonUnHover {
+    width: 2.5em;
+    left: 27em;
+    overflow: hidden;
+    animation-name: backupUnHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 2em;
+}
+
+.backupIconHover {
+    left: 7.5em;
+    overflow: hidden;
+    animation-name: backupIconHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.backupIconUnHover {
+    left: 0em;
+    overflow: hidden;
+    animation-name: backupIconUnHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.backupText {
+    position: relative;
+    top: -2.5em;
+    left: 0.5em;
+    width: 0em;
+    overflow: hidden;
+}
+
+#backupTextInner {
+    width: 7em;
+    line-height: 2.5em
+}
+
+.backupTextHover {
+    width: 6em;
+    animation-name: backupTextHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.backupTextUnHover {
+    width: 0em;
+    animation-name: backupTextUnHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+#backups {
+    width: 100%;
+    height: 50vw;
+    overflow: scroll;
+}
+
+@keyframes backupsettingInvisibleA {
+    from {
+        top: 0.25em;
+    }
+
+    to {
+        top: -40em;
+    }
+}
+
+@keyframes backupsettingVisibleA {
+    from {
+        top: -40em;
+    }
+
+    to {
+        top: 0.25em;
+    }
+}
+
+@keyframes swipeLeftA {
+    from {
+        left: 0.25em;
+    }
+
+    to {
+        left: -29.25em;
+    }
+}
+
+@keyframes swipeRightA {
+    from {
+        left: -29.25em;
+    }
+
+    to {
+        left: 0.5em;
+    }
+}
+
+@keyframes backupHover {
+    from {
+        width: 2.5em;
+        left: 27em;
+        border-radius: 2em;
+    }
+
+    to {
+        width: 10em;
+        left: 19.5em;
+        border-radius: 0.2em 2em 2em 0.2em;
+    }
+}
+
+@keyframes backupUnHover {
+    from {
+        width: 10em;
+        left: 19.5em;
+        border-radius: 0.2em 2em 2em 0.2em;
+    }
+
+    to {
+        width: 2.5em;
+        left: 27em;
+        border-radius: 2em;
+    }
+}
+
+@keyframes backupIconHover {
+    from {
+        left: 0em;
+    }
+
+    to {
+        left: 7.5em;
+    }
+}
+
+@keyframes backupIconUnHover {
+    from {
+        left: 7.5em;
+    }
+
+    to {
+        left: 0em;
+    }
+}
+
+@keyframes backupTextHover {
+    from {
+        width: 0em;
+    }
+
+    to {
+        width: 6em;
+    }
+}
+
+@keyframes backupTextUnHover {
+    from {
+        width: 6em;
+    }
+
+    to {
+        width: 0em;
+    }
+}

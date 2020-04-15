@@ -1,0 +1,356 @@
+.walletButton {
+    position: fixed;
+    top: 27em;
+    left: 0.5em;
+    height: 2.5em;
+    width: 2.5em;
+    min-width: 2.5em;
+    border-radius: 2em;
+    overflow: hidden;
+    line-height: 2.5em;
+    z-index: 995;
+    font-size: 1em;
+}
+
+.walletButtonContent {
+    width: 10em;
+}
+
+.walletButtonHover {
+    width: 10em;
+    overflow: hidden;
+    animation-name: WalletHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 2em 0.2em 0.2em 2em;
+}
+
+.walletButtonUnHover {
+    width: 2.5em;
+    overflow: hidden;
+    animation-name: WalletUnHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 2em;
+}
+
+.qr {
+    background-image: url("images/qr-01.svg");
+    width: 2.5em;
+    height: 2.5em;
+    float: left;
+}
+
+.qrtoclose {
+    animation-name: QRToClose;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.closetoqr {
+    animation-name: CloseToQR;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.close {
+    background-image: url("images/close-01.svg");
+    width: 2.5em;
+    height: 2.5em;
+    float: left;
+}
+
+.qrText {
+    width: 7em;
+    float: left;
+    left: 3em;
+}
+
+.walletpage {
+    position: absolute;
+    background-color: white;
+    top: 27.5em;
+    left: 2em;
+    width: 0em;
+    height: 0em;
+    border-radius: 1.25em;
+    box-shadow: 0px 0px 5px 0px #222222;
+    overflow: hidden;
+    z-index: 994;
+}
+
+.walletPageShow {
+    animation-name: walletPageShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    left: 0.25em;
+    top: 3.25em;
+    width: 29.5em;
+    height: 26.5em;
+    box-shadow: 0px 0px 5px 2px #222222;
+}
+
+.walletPageUnShow {
+    animation-name: walletPageUnShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    top: 27.5em;
+    left: 2em;
+    width: 0em;
+    height: 0em;
+    box-shadow: 0px 0px 5px 0px #222222;
+}
+
+.walletContent {
+    padding: 1em;
+    padding-top: 0em;
+    width: 27.5em !important;
+    height: 26.5em;
+    overflow: hidden;
+}
+
+#qrcode {
+    width: 8em;
+    height: 8em !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+#addressText {
+    width: 100%;
+    line-height: 1em;
+    font-size: 0.8em;
+    height: 2em;
+    text-align: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+    -moz-user-select: text !important;
+}
+
+.qrBack {
+    margin-bottom: 1em
+}
+
+.copyable {
+    user-select: all;
+}
+
+#withdrawpage {
+    position: absolute;
+    width: 75vw;
+    left: 12.5vw;
+    border-radius: 1.25em;
+    box-shadow: 0px 0px 5px 0px #222222;
+    background-color: white;
+    padding: 1em;
+    z-index: 996;
+}
+
+#withdrawBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #22222255;
+}
+
+.withdrawPageUnShowNA {
+    top: -30em;
+}
+
+.withdrawPageShow {
+    top: 7em;
+    animation-name: withdrawShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.withdrawPageUnShow {
+    top: -30em;
+    animation-name: withdrawUnShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.withdrawBackUnShowNA {
+    z-index: 0;
+    opacity: 0;
+}
+
+.withdrawBackShow {
+    z-index: 995;
+    opacity: 100;
+    animation-name: withdrawBackShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.withdrawBackUnShow {
+    z-index: 0;
+    opacity: 0;
+    animation-name: withdrawUnBackShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes walletPageShowA {
+    from {
+        width: 0em;
+        height: 0em;
+        left: 1em;
+        top: 29.25em;
+        box-shadow: 0px 0px 5px 0px #222222;
+    }
+
+    to {
+        width: 29.5em;
+        height: 26.5em;
+        left: 0.25em;
+        top: 3.25em;
+        box-shadow: 0px 0px 5px 2px #222222;
+    }
+}
+
+@keyframes walletPageUnShowA {
+    from {
+        width: 29.5em;
+        height: 26.5em;
+        left: 0.25em;
+        top: 3.25em;
+        box-shadow: 0px 0px 5px 2px #222222;
+    }
+
+    to {
+        width: 0em;
+        heigth: 0em;
+        left: 1em;
+        top: 29.25em;
+        box-shadow: 0px 0px 5px 0px #222222;
+    }
+}
+
+@keyframes WalletHover {
+    from {
+        width: 2.5em;
+        border-radius: 2em;
+    }
+
+    to {
+        width: 10em;
+        border-radius: 2em 0.2em 0.2em 2em;
+    }
+}
+
+@keyframes WalletUnHover {
+    from {
+        width: 10em;
+        border-radius: 2em 0.2em 0.2em 2em;
+    }
+
+    to {
+        width: 2.5em;
+        border-radius: 2em;
+    }
+}
+
+@keyframes CloseToQR {
+    0% {
+        background-image: url("images/close-01.svg");
+        transform: rotate(0deg);
+    }
+
+    50% {
+        background-image: url("images/close-01.svg");
+        transform: rotate(180deg);
+    }
+
+    51% {
+        background-image: url("images/qr-01.svg");
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-image: url("images/qr-01.svg");
+    }
+}
+
+@keyframes QRToClose {
+    100% {
+        background-image: url("images/close-01.svg");
+        transform: rotate(-360deg);
+    }
+
+    51% {
+        background-image: url("images/close-01.svg");
+        transform: rotate(-180deg);
+    }
+
+    50% {
+        background-image: url("images/qr-01.svg");
+        transform: rotate(-180deg);
+    }
+
+    0% {
+        transform: rotate(0deg);
+        background-image: url("images/qr-01.svg");
+    }
+}
+
+@keyframes withdrawShowA {
+    from {
+        top: -30em;
+    }
+
+    to {
+        top: 7em;
+    }
+}
+
+@keyframes withdrawUnShowA {
+    from {
+        top: 7em;
+    }
+
+    to {
+        top: -30em;
+    }
+}
+
+@keyframes withdrawBackShowA {
+    0% {
+        z-index: 0;
+        opacity: 0;
+    }
+
+    1% {
+        z-index: 995;
+        opacity: 0;
+    }
+
+    100% {
+        z-index: 995;
+        opacity: 100;
+    }
+}
+
+@keyframes withdrawBackUnShowA {
+    0% {
+        z-index: 995;
+        opacity: 100;
+    }
+
+    99% {
+        z-index: 995;
+        opacity: 0;
+    }
+
+    100% {
+        z-index: 0;
+        opacity: 0;
+    }
+}

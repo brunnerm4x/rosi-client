@@ -1,0 +1,124 @@
+#status {
+    z-index: 1;
+}
+
+.loading {
+    width: 25vw !important;
+    height: 25vw !important;
+    float: left;
+    left: 12.5vw;
+    display: none;
+}
+
+#balance {
+    width: 100vw;
+    height: 50vw;
+    line-height: 50vw;
+    text-align: center;
+    font-family: Roboto-Bold;
+    font-size: 10vw;
+}
+
+#infoButton {
+    font-family: Roboto-Bold;
+    color: white;
+    background-color: #eb3c30;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    text-align: center;
+    line-height: 1em;
+    position: absolute;
+    top: 6em;
+    left: 90vw;
+}
+
+#statusInfo {
+    color: white !important;
+    background-color: #222222AA;
+    border-radius: 0.5em;
+    padding: 1em;
+    padding-right: 0;
+    position: absolute;
+    width: 75vw;
+    height: 45vw;
+    left: 12.5vw;
+    top: 10em;
+    box-shadow: 0px 0px 5px 0px #222222;
+}
+
+#statusInfoBalance {
+    color: white !important;
+    background-color: #222222AA;
+    border-radius: 0.5em;
+    padding: 1em;
+    padding-right: 0;
+    position: absolute;
+    width: 75vw;
+    height: 20vw;
+    left: 12.5vw;
+    top: 20em;
+    box-shadow: 0px 0px 5px 0px #222222;
+}
+
+#balanceBarMouseHandler {
+    width: 100vw;
+    height: 5vw;
+    position: relative;
+    top: -5vw;
+    z-index: 10;
+}
+
+.statusShow {
+    opacity: 100;
+    animation-name: statusShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.statusUnShow {
+    opacity: 0;
+    animation-name: statusUnShowA;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.statusUnShowNA {
+    opacity: 0;
+}
+
+#balanceBar1 {
+    background-color: #eb3c30;
+    height: 2vw;
+    left: 5vw;
+    top: -2vw;
+    position: relative;
+}
+
+#balanceBar2 {
+    background-color: darkred;
+    height: 2vw;
+    left: 5vw;
+    position: relative;
+    width: 90vw;
+}
+
+@keyframes statusShowA {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+}
+
+@keyframes statusUnShowA {
+    from {
+        opacity: 100;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

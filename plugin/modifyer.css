@@ -1,0 +1,95 @@
+.red {
+    color: white !important;
+    background-color: #eb3c30 !important;
+}
+
+.btn_c {
+    border-style: none;
+    box-shadow: 0px 0px 5px 2px #ccc;
+}
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.w80 {
+    width: 23em !important;
+}
+
+.w20 {
+    width: 3em;
+}
+
+.h1 {
+    height: 2em !important;
+}
+
+.lh1 {
+    line-height: 2em !important;
+}
+
+.wfull {
+    width: 100% !important;
+}
+
+.posrel1 {
+    position: relative;
+    top: 5em;
+}
+
+.mdl-textfield__label {
+    font-size: 0.8em !important;
+}
+
+.noOverflow {
+    overflow: hidden;
+}
+
+.vspacer {
+    position: relative;
+    height: 8em;
+}
+
+.borderWhite {
+    border-color: white;
+}
+
+.vw2_3 {
+    width: 69.5% !important;
+}
+
+.vw1_3 {
+    width: 29.4% !important;
+}
+
+.vw2_3p {
+    width: 68% !important;
+}
+
+.vw1_3p {
+    width: 30% !important;
+}
+
+.vw2_3s {
+    width: 50% !important;
+}
+
+.vw1_3s {
+    width: 25% !important;
+}
+
+.mb1 {
+    margin-bottom: 0.5em !important;
+}

@@ -1,0 +1,5 @@
+node_modules/
+builds/
+__dev_flash_objects/
+package-lock.json
+

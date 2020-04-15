@@ -1,0 +1,303 @@
+.spacer {
+    width: 30em;
+}
+
+.headder {
+    position: absolute;
+    height: 3em;
+    width: 30em;
+    border: 0;
+    background-color: #222222;
+    box-shadow: 0px 0px 5px 0px #222222;
+    margin-bottom: 1em;
+    border-radius: 0 0 0.2em 0.2em;
+    z-index: 997;
+}
+
+.logo {
+    background-image: url("images/Rosi_Logo-01.svg");
+    width: 3em;
+    height: 3em;
+    float: left;
+}
+
+.headline {
+    font-family: Roboto-Bold;
+    font-size: 2em;
+    position: absolute;
+    left: 0.5em;
+    top: 1.5em;
+    color: #222222;
+}
+
+.headlineRel {
+    font-family: Roboto-Bold;
+    font-size: 2em;
+    position: relative;
+    left: 0.5em;
+    top: 1.5em;
+    color: #222222;
+}
+
+.headlineNone {
+    font-family: Roboto-Bold;
+    font-size: 2em;
+    color: #222222;
+}
+
+.tab {
+    width: 25em;
+    height: 30em;
+    margin: 1em;
+}
+
+.mbs {
+    width: 49%;
+}
+
+body {
+    line-height: 1.8em;
+    width: 30em;
+    height: 30em;
+    margin: 0;
+    background-color: white;
+    font-family: var(--FontMain);
+    overflow: hidden;
+}
+
+input {
+    float: right;
+    width: 4em;
+    line-height: 1.8em;
+    margin-left: 1.8em;
+    font-family: inherit;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+label {
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+button {
+    padding: 0;
+}
+
+.statVal {
+    float: right;
+    font-style: italic;
+    margin-right: 2em;
+}
+
+.headlineOld {
+    color: var(--Font);
+    font-style: normal;
+    font-family: var(--RosiFont);
+    font-size: 3em;
+    display: inline-block;
+    float: left;
+    -moz-transform: rotate(-20deg);
+    position: absolute;
+    top: 0.8em;
+    left: 0.5em;
+    text-shadow: 3px 3px var(--Font_Shadow);
+}
+
+.headline2Old {
+    border-top: 0.4em solid var(--Font);
+    color: var(--Font);
+    font-style: normal;
+    font-size: 0.8em;
+    width: 28em;
+}
+
+.tab_sw {
+    margin-bottom: 1em;
+    border: 0;
+    border-bottom: 0.1em solid var(--Black);
+    margin-left: 0;
+    margin-right: 0;
+    width: 9.5em;
+    font-size: 1em;
+    text-shadow: 0px 0px 5px var(--Font_Shadow);
+    background-color: var(--Background);
+    color: var(--Black);
+    /*border-radius: 1em;*/
+    font-family: var(--FontButton);
+    height: 2em;
+    border-color: var(--Black);
+    animation-name: tab_sw_animation_back;
+    animation-duration: 0.2s;
+}
+
+.tab_sw:hover {
+    text-shadow: 0px 0px 10px var(--Font_Shadow_Hover);
+    animation-name: tab_sw_animation;
+    animation-duration: 0.2s;
+    border-color: var(--Font);
+    color: var(--Font);
+}
+
+.tabold {
+    width: 30em;
+    /*border-top: 0.4em solid var(--Font);*/
+    font-style: normal;
+    color: var(--Black);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+.input_number {
+    background-color: var(--Background);
+    color: var(--Black);
+    border: 1px solid;
+    border-radius: 0.3em;
+    border-color: var(--Black);
+    font-weight: bold;
+    height: 1.5em;
+    text-align: center;
+}
+
+.input_text {
+    width: 50%;
+    background-color: var(--Background);
+    color: var(--Black);
+    border: 1px solid;
+    border-radius: 0.3em;
+    border-color: var(--Black);
+    font-weight: bold;
+    height: 1.5em;
+    text-align: center;
+}
+
+.entry_label {
+    top: 0 !important;
+}
+
+#show_input_address {
+    float: right;
+    width: 29%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 10%;
+}
+
+#generate_input_address {
+    width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 10%;
+    font-weight: bold;
+}
+
+#dl_wallet_backup {
+    width: 70%;
+}
+
+#sw_withdraw {
+    width: 100%;
+}
+
+#restore_wallet {
+    width: 25%;
+}
+
+#save_settings {
+    float: right;
+    margin: 1em;
+    font-weight: bold;
+}
+
+#restore_settings {
+    float: left;
+    margin: 1em;
+}
+
+#ModeSwitch {
+    float: right;
+    width: var(--SizeSun);
+    position: absolute;
+    top: var(--PosSunY);
+    left: 20em;
+}
+
+#HeadBack {
+    float: left;
+    width: 30em;
+    height: 5em;
+}
+
+#openPreferences{
+	color: blue;
+	cursor: pointer;
+	width:100%;
+	margin-bottom:4em;
+	text-align:center;
+}
+
+#openPreferences:hover{
+	text-decoration: underline;
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../font/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('../font/Roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: lemonmilk;
+    src: url('../font/lemonmilk-webfont/lemonmilk-webfont.ttf');
+}
+
+@font-face {
+    font-family: edwardian-script-itc;
+    src: url('../font/edwardian-script-itc/ITCEDSCR.ttf');
+}
+
+@font-face {
+    font-family: Road_Rage;
+    src: url('../font/80s/Road_Rage/Road_Rage.otf') format("woff");
+}
+
+@font-face {
+    font-family: Streamster;
+    src: url('../font/80s/streamster/Streamster.ttf');
+}
+
+@font-face {
+    font-family: Neon;
+    src: url('../font/80s/neon/Neon.ttf');
+}
+
+:root {
+    --Background: #fbfbf0;
+    --RosiFont: Roboto-Regular;
+    --Font: #dd2c00;
+    --Font_Shadow: #fbfbf0;
+    --Font_Shadow_Hover: #fbfbf0;
+    --Font_Main_Shadow: #fbfbf0;
+    --QRBack: #fbfbf0;
+    --Black: #222222;
+    --SizeSun: 1.5em;
+    --PosSunY: 2em;
+    --FontButton: Roboto-Regular;
+}

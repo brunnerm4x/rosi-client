@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ROSI Preferences</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+	<!-- To add a tab, just add button with class "tablinks" and id "sw_xxx" and for content add
+		 a div with class "tabcontent" and id "xxx" where xxx is same in button and div name. -->
+		 
+	<!-- Tab Switch-->
+	<div class="tab">
+		<button class="tablinks" id="sw_general">ROSI-General</button>
+		<button class="tablinks" id="sw_channels_preferences">Channel Preferences</button>
+		<button class="tablinks" id="sw_channels_manage">Manage Channels</button>
+		<button class="tablinks" id="sw_wallet">Wallet Preferences</button>
+		<button class="tablinks" id="sw_wallet_manage">Manage Wallet</button>
+		<button class="tablinks" id="sw_backup">Backup</button>
+		<button class="tablinks" id="sw_frontend">Frontend</button>
+	</div>
+	
+	<!-- Tab Content -->
+	<div id="general" class="tabcontent">
+		Maximum Payment per Minute of Stream (i): <input type="number" min="1" step="1" id="max_ppm" class="input_number"></input><br>
+		Averaging time for ppm (sec): <input type="number" min="1" step="1" id="ppm_avg_t" class="input_number"></input><br>
+		Prepayment max time (sec): <input type="number" min="1" step="1" id="prepay_t" class="input_number"></input><br>
+		
+		<br>
+		<button id="save_settings_general" class="tab_sw">Save</button>
+        <button id="restore_settings_general" class="tab_sw">Restore defaults</button>
+	</div>
+	
+	<div id="channels_preferences" class="tabcontent">
+		<input type="checkbox" id="ask_new_prov"> Ask when initializing new provider <br>
+		<input type="checkbox" id="ask_new_channel"> Ask when creating new flash-channel<br>
+		<input type="checkbox" id="use_sugg_coll"> Use suggested collateral (from server) <br>
+		<input type="checkbox" id="warn_sugg_coll"> Warn if suggested collateral higher than setting <br>
+		First channel with provider collateral (i): <input type="number" min="1" step="1" id="first_ch_coll" class="input_number"></input><br>
+		Channel with known provider collateral (i): <input type="number" min="1" step="1" id="later_ch_coll" class="input_number"></input><br>
+		Create new channel when balance below (i/factor): <input type="number" min="0" step="0.0001" id="new_ch_threshold" class="input_number"></input><br>
+		Amount of transactions possible in channel: <input type="number" min="1" step="1" id="channel_min_tx" class="input_number"></input><br>
+		Factor suggested Collateral on new provider: <input type="number" min="0.01" step="0.01" max="1.00" id="factor_sg_first" class="input_number"></input><br>
+		
+		<br>
+		<button id="save_settings_channel" class="tab_sw">Save</button>
+        <button id="restore_settings_channel" class="tab_sw">Restore defaults</button>
+	</div>
+	
+	<div id="channels_manage" class="tabcontent">
+		Currently open channels:<br>
+		<button id="cm_refresh_list">Refresh channel-list (unbuffered)</button><br>
+		<div id="open_channel_list">
+			[LOADING NOT INITIATED]
+			
+		</div>
+		<div id="open_channel_tools">
+			Channel-ID:<br><b><div id="mc_sel_channelid"></div></b>
+			Provider: <b><span id="mc_sel_provider"></span></b><br>
+			Setup Collateral: <b><span id="mc_sel_collateral"></span></b><br>
+			Available Collateral: <b><span id="mc_sel_available_coll"></span></b><br>
+			Available unconfirmed Collateral: <b><span id="mc_sel_available_unconf"></span></b><br>
+			Funding Transaction: <b><div id="mc_sel_funding_tx"></div></b><br>
+			
+			<button id="channel_close">Close Channel</button>
+			<button id="channel_retry_funding">Retry funding</button>
+			<button id="channel_resolve_conflict">Resolve conflict</button>
+		</div>
+		<p>
+		INFO:<br>
+		Only use the functions if you know what you do!<br>
+		By using retry funding, you can potentially loose iotas of the same amount as the
+		collateral of the channel (if a second transaction is triggered, and the first one
+		succeeds also, the channel is funded with the double balance, but when channel is closed,
+		this will not get checked!
+		</p>
+	</div>
+	
+	
+	<div id="wallet" class="tabcontent">
+		IOTA Transaction Security Level: <input type="number" min="1" step="1" max="3" id="security" class="input_number"></input><br>
+		IOTA Standard Depth: <input type="number" min="1" step="1" id="std_depth" class="input_number"></input><br>
+		IOTA Promote Tx Depth: <input type="number" min="1" step="1" id="promote_depth" class="input_number"></input><br>
+		IOTA Reattach Tx Depth: <input type="number" min="1" step="1" id="reattach_depth" class="input_number"></input><br>
+		IOTA Minimum Weight Magnitude: <input type="number" min="1" step="1" id="minweightmag" class="input_number"></input><br>
+		IOTA Standard Message (for value-only Transfers): <input type="text" id="std_msg"></input><br>
+		IOTA Standard Tag (for value-only Transfers): <input type="text" id="std_tag"></input><br>
+		Wallet name (file/database): <input type="text" id="wallet_name"></input><br>
+		Task Timeout (ms): <input type="number" min="1" step="1" id="task_timeout_ms" class="input_number"></input><br>
+		Task Scheduler rate/sleep time (ms): <input type="number" min="1" step="1" id="task_scheduler_rate" class="input_number"></input><br>
+		Reattach/Promote rate/sleep time (ms): <input type="number" min="1" step="1" id="cyclic_update_rate" class="input_number"></input><br>
+		Request max error count: <input type="number" min="1" step="1" id="ec_max" class="input_number"></input><br>
+		
+		IOTA-Node providers/URIs (url:port, one entry per line):<br>
+		<textarea id="nodelist"></textarea><br>
+		
+		<br>
+		<button id="save_settings_wallet" class="tab_sw">Save</button>
+        <button id="restore_settings_wallet" class="tab_sw">Restore defaults</button>
+	</div>
+	
+	<div id="wallet_manage" class="tabcontent">
+		<button id="wallet_reinit_complete" class="tab_sw">Reinitialize Wallet Inputs</button><br>
+		<button id="wallet_reinit_balance" class="tab_sw">Reinitialize Wallet Balance from Inputs</button><br>
+		<p>
+		INFO:<br>
+		Check the effects of the functions by opening the wallet worker debug console.
+		</p>
+	</div>
+		
+	<div id="backup" class="tabcontent">
+		<div>Backup-Server: <input type="text" id="backup_server" class="input_text" value="loading"></input></div>
+		<div>Backup-Username: <input type="text" id="backup_user" class="input_text" value="loading"></input></div>
+		<div>Backup-Password: <input type="password" id="backup_password" class="input_text"></input></div>
+		<div>Automatically backup<input type="checkbox" id="auto_backup"></div>
+		<div>Backup closed Channels <input type="checkbox" id="backup_closed_channels"></div>
+		
+		<br>
+		<button id="save_settings_backup" class="tab_sw">Save</button>
+        <button id="restore_settings_backup" class="tab_sw">Restore defaults</button>
+	</div>
+	
+	<div id="frontend" class="tabcontent">
+		Design: <input type="text" id="design" class="input_number"></input><br>
+		
+		<br>
+		<button id="save_settings_frontend" class="tab_sw">Save</button>
+        <button id="restore_settings_frontend" class="tab_sw">Restore defaults</button>
+	</div>
+	
+	<script src="localstorage.js"></script>
+    <script src="settings_helper.js"></script>
+	<script src="options.js"></script>
+</body>
+</html>

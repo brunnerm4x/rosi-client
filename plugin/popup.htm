@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="modifyer.css">
+    <link rel="stylesheet" href="status.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="wallet.css">
+    <link rel="stylesheet" href="backup.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="./mdl/material.min.css">
+    <script src="./mdl/material.min.js"></script>
+    <link rel="stylesheet" href="material.min.css" />
+</head>
+
+<body>
+  <div class="spacer"></div>
+    <div class="headder">
+        <div class="logo" id="logo"></div>
+        <div id="settingspage" class="settingspage">
+            <div class="headline">Settings</div>
+            <div class="settingsContent">
+                <button id="sw_backup_settings" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mbs">Backup Setup</button>
+                <button id="sw_backup_restore" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mbs">Restore Backup</button>
+                <br>
+                <br>
+                <form id="settingsForm">
+                    <div class="float_left w80 h1 lh1">Ask when initializing new provider</div>
+                    <div class="float_left w20 h1">
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ask_new_prov">
+                            <input type="checkbox" id="ask_new_prov" class="mdl-switch__input">
+                            <span class="mdl-switch__label"></span>
+                        </label>
+                    </div>
+                    <br>
+
+                    <div class="float_left w80 h1 lh1">Ask when creating new flash-channel</div>
+                    <div class="float_left w20 h1">
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="ask_new_channel">
+                            <input type="checkbox" id="ask_new_channel" class="mdl-switch__input">
+                            <span class="mdl-switch__label"></span>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="float_left w80 h1 lh1">Use suggested collateral (from server)</div>
+                    <div class="float_left w20 h1">
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="use_suggested_collateral">
+                            <input type="checkbox" id="use_suggested_collateral" class="mdl-switch__input">
+                            <span class="mdl-switch__label"></span>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="float_left w80 h1 lh1">Warn if suggested collateral higher than setting</div>
+                    <div class="float_left w20 h1">
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="warn_suggested_collateral">
+                            <input type="checkbox" id="warn_suggested_collateral" class="mdl-switch__input">
+                            <span class="mdl-switch__label"></span>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*(\.[0-9]+)?[\s]*[kMGTP]?i?" id="max_ppm">
+                        <label class="mdl-textfield__label entry_label" for="first_channel_bal">Maximum Price/Minute of Stream (iota)</label>
+                        <span class="mdl-textfield__error posrel1">Not Able To Parse Input!</span>
+                    </div>
+                    
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*(\.[0-9]+)?[\s]*[kMGTP]?i?" id="first_channel_bal">
+                        <label class="mdl-textfield__label entry_label" for="first_channel_bal">First channel with provider collateral (iota)</label>
+                        <span class="mdl-textfield__error posrel1">Not Able To Parse Input!</span>
+                    </div>
+                    
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*(\.[0-9]+)?[\s]*[kMGTP]?i?" id="later_channel_bal">
+                        <label class="mdl-textfield__label entry_label" for="later_channel_bal">Channel with known provider collateral (iota)</label>
+                        <span class="mdl-textfield__error posrel1">Not Able To Parse Input!</span>
+                    </div>
+                    
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*(\.[0-9]+)?[\s]*[kMGTP]?i?" id="create_new_channel_threshold">
+                        <label class="mdl-textfield__label entry_label" for="create_new_channel_threshold">Create new channel when balance below (iota > 1 or factor)</label>
+                        <span class="mdl-textfield__error posrel1">Not Able To Parse Input!</span>
+                    </div>
+                    
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="channel_min_tx">
+                        <label class="mdl-textfield__label entry_label" for="channel_min_tx">Amount of transactions possible in channel</label>
+                        <span class="mdl-textfield__error posrel1">Input is not a Integer!</span>
+                    </div>
+                    
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*(\.[0-9])?" id="factor_sugg_coll_fist">
+                        <label class="mdl-textfield__label entry_label" for="factor_sugg_coll_fist">Factor suggested Collateral on new provider</label>
+                        <span class="mdl-textfield__error posrel1">Input is not a number!</span>
+                    </div>
+                    
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                        <textarea class="mdl-textfield__input" type="text" rows="3" id="provider_list"></textarea>
+                        <label class="mdl-textfield__label entry_label" for="provider_list">IOTA-Node providers/URIs (url:port, one entry per line)</label>
+                    </div>
+                    <button id="save_settings" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored vw1_3s">Save</button>
+                    <button id="restore_settings" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored vw2_3s">Restore defaults</button>
+                </form>
+				<div id="openPreferences">More Preferences</div>
+            </div>
+            <div id="settings" class="mdl-js-button mdl-js-ripple-effect settings"></div>
+        </div>
+    </div>
+    <div id="tab_switch">
+        <button id="sw_status" class="tab_sw">Status</button>
+    </div>
+
+    <div id="walletpage" class="walletpage">
+        <div class="walletContent">
+            <button id="show_input_address" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mbs">Show Curr.</button>
+            <button id="generate_input_address" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mbs">Get New Input Address</button>
+            <div class="qrBack">
+                <div id="qrcode"></div>
+            </div>
+            <div id="addressText"><b>Always create a new address after using it once!</b></div><br>
+            <button id="sw_withdraw" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mbs">Withdraw from wallet</button>
+
+            <br>
+            <br>
+            <button id="dl_wallet_backup" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mbs vw2_3">Download Wallet Backup</button>
+            <button id="restore_wallet" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mbs vw1_3">Restore</button>
+        </div>
+    </div>
+
+    <button id="sw_wallet" class="mdl-js-button mdl-js-ripple-effect red walletButton btn_c noOverflow">
+        <div class="noOverflow walletButtonContent">
+            <div id="walletButtonIcon" class="qr"></div>
+            <div id="walletButtonText" class="float_left qrText">Fund Wallet</div>
+        </div>
+    </button>
+
+    <button id="create_online_backup" class="mdl-js-button mdl-js-ripple-effect red backupButton btn_c noOverflow">
+        <div id="iconContainer">
+            <div id="backupIcon" class="backupIcon"></div>
+            <div id="backupLoading" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active borderWhite loading"></div>
+        </div>
+        <div id="backupButtonText" class="backupText">
+            <div id="backupTextInner">Save Backup</div>
+        </div>
+    </button>
+
+
+    <div id="backupsetting" class="backupsetting backupsettingInvisibleNA">
+        <div id="backupContent" class="backupContent">
+            <div class="backupPage page1">
+                <div class="headlineBackup">RosiConserver Backup Setup</div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                    <input class="mdl-textfield__input" type="text" value="loading" id="backup_server_url">
+                    <label class="mdl-textfield__label entry_label" for="first_channel_bal">Backup-Server: </label>
+                    <span class="mdl-textfield__error posrel1">Input is not a url!</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                    <input class="mdl-textfield__input" type="text" value="loading" id="backup_usr_id">
+                    <label class="mdl-textfield__label entry_label" for="first_channel_bal">Backup-Username: </label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+                    <input class="mdl-textfield__input" type="password" id="backup_pw">
+                    <label class="mdl-textfield__label entry_label" for="first_channel_bal">Backup-Password: </label>
+                </div>
+
+                <div class="float_left w80 h1 lh1">Automatically backup</div>
+                <div class="float_left w20 h1">
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="backup_sw_auto">
+                        <input type="checkbox" id="backup_sw_auto" class="mdl-switch__input">
+                        <span class="mdl-switch__label"></span>
+                    </label>
+                </div>
+                <br>
+                <div class="float_left w80 h1 lh1">Backup closed Channels</div>
+                <div class="float_left w20 h1">
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="backup_closed_channels">
+                        <input type="checkbox" id="backup_closed_channels" class="mdl-switch__input">
+                        <span class="mdl-switch__label"></span>
+                    </label>
+                </div>
+
+                <button id="close_backup_settings" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored vw1_3">Close</button>
+                <button id="save_backup_settings" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored vw2_3">Test & Save</button>
+                <br>
+            </div>
+            <div class="backupPage page2">
+                <div class="headlineBackup">RosiConserver Backup Restore</div>
+                <div id="backups"></div>
+                <br>
+                <button id="close_backup_restore" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored vw1_3">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="status" class="status">
+        <div id="balance"></div>
+        <div id="infoButton">i</div>
+        <div id="balanceBar2"></div>
+        <div id="balanceBar1"></div>
+        <div id="balanceBarMouseHandler"></div>
+        <div id="statusInfo" class="statusUnShowNA">
+            <div class="textline">Pending output balance: <span id="pending_bal" class="statVal"></span></div><br>
+            <div class="textline">Open channels: <span id="open_channel_cnt" class="statVal"></span></div><br>
+            <div class="textline">Open channels balance unconf.: <span id="channel_bal_unconf" class="statVal"></span></div><br>
+             <div class="textline">Playing Stream max PPM: <span id="curr_ppm" class="statVal">Not stream.</span></div><br>
+            <div class="textline">Last Backup: <span id="last_backup" class="statVal">No Backup found.</span></div><br>
+        </div>
+        <div id="statusInfoBalance" class="statusUnShowNA">
+            <div class="textline">Remaining wallet balance: <span id="wallet_bal" class="statVal"></span></div><br>
+            <div class="textline">Open channels balance: <span id="channel_bal" class="statVal"></span></div><br>
+        </div>
+    </div>
+    <div id="withdrawBack" class="withdrawBackUnShowNA"></div>
+    <div id="withdrawpage" class="withdrawPageUnShowNA">
+        <div class="headlineNone">Withdraw from wallet</div>
+        </br>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+            <input class="mdl-textfield__input" type="text" pattern="[A-Z,9]*" id="withdraw_address">
+            <label class="mdl-textfield__label entry_label" for="factor_sugg_coll_fist">To Address:</label>
+            <span class="mdl-textfield__error ">Input an IOTA Address!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label wfull">
+            <input class="mdl-textfield__input" type="text" pattern="[0-9]*(\.[0-9]+)?[\s]*[kMGTP]?i?" id="withdraw_amount">
+            <label class="mdl-textfield__label entry_label" for="factor_sugg_coll_fist">Amount (iota):</label>
+            <span class="mdl-textfield__error">Not Able To Parse Input!</span>
+        </div>
+        <button id="closewithdraw" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored vw1_3p">Close</button>
+        <button id="btn_withdraw_now" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored vw2_3p">Withdraw Now</button>
+    </div>
+
+
+    <script src="iota_value_display_helper.js"></script>
+    <script src="localstorage.js"></script>
+    <script src="settings_helper.js"></script>
+    <script src="qrcode.min.js"></script>
+    <script src="popup.js"></script>
+    <script src="frontend.js"></script>
+</body>
+
+</html>

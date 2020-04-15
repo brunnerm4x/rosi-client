@@ -1,0 +1,59 @@
+{
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rosi@rosipay.net",
+      "strict_min_version": "60.0"
+    }
+  },
+  "manifest_version": 2,
+  "name": "rosi",
+  "version": "0.4.1",
+  "description": "Allowes automated micro payments for streams, etc, over the tangle.",
+  "icons": {
+    "48": "images/icons/rosi_icon_red.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "iota_value_display_helper.js",
+        "check_site.js"
+      ]
+    }
+  ],
+  "background": {
+    "page": "background.htm",
+    "persistent": true
+  },
+  "options_ui": {
+    "page": "options.htm",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "images/icons/rosi_icon_gray.svg",
+    "theme_icons": [
+      {
+        "light": "images/icons/rosi_icon_gray_light.svg",
+        "dark": "images/icons/rosi_icon_gray_dark.svg",
+        "size": 16
+      },
+      {
+        "light": "images/icons/rosi_icon_gray_light.svg",
+        "dark": "images/icons/rosi_icon_gray_dark.svg",
+        "size": 32
+      }
+    ],
+    "default_title": "rosi",
+    "default_popup": "popup.htm"
+  },
+  "permissions": [
+    "tabs",
+    "*://*/*",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ]
+}
