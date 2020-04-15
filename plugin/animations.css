@@ -1,0 +1,25 @@
+
+@keyframes tab_sw_animation {
+  from {
+	  border-color: var(--Black);
+	  color: var(--Black);
+	  text-shadow: 0px 0px 5px var(--Font_Shadow);
+ 	}
+  to {
+	  border-color: var(--Font);
+	  color: var(--Font);
+	  text-shadow: 0px 0px 5px var(--Font_Shadow_Hover);
+	}
+}
+@keyframes tab_sw_animation_back {
+  from {
+	  border-color: var(--Font);
+	  color: var(--Font);
+	  text-shadow: 0px 0px 5px var(--Font_Shadow_Hover);
+ 	}
+  to {
+	  border-color: var(--Black);
+	  color: var(--Black);
+	  text-shadow: 0px 0px 5px var(--Font_Shadow);
+	}
+}

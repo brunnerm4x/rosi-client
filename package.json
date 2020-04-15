@@ -1,0 +1,27 @@
+{
+  "name": "rosi-client",
+  "version": "0.5.0",
+  "description": "ROSI Payment System Firefox Addon",
+  "browser": "plugin/manifest.json",
+  "dependencies": {
+    "iota.flash.js": "^0.0.2",
+    "iota.lib.js": "^0.5.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd scripts && bash _build_browser_libs.sh",
+    "build-signed": "cd scripts && bash _build_signed_addon.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunnerm4x/rosi-client.git"
+  },
+  "author": "Maximilian Brunner",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/brunnerm4x/rosi-client/issues"
+  },
+  "homepage": "https://github.com/brunnerm4x/rosi-client#readme"
+}
